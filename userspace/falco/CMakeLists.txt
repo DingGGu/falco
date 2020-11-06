@@ -96,6 +96,7 @@ if(MINIMAL_BUILD)
     falco
     PUBLIC
       "${SYSDIG_SOURCE_DIR}/userspace/sysdig"
+      "${PROJECT_BINARY_DIR}/userspace/libhawk"
       "${PROJECT_SOURCE_DIR}/userspace/engine"
       "${PROJECT_BINARY_DIR}/userspace/falco"
       "${PROJECT_BINARY_DIR}/driver/src"
@@ -107,6 +108,7 @@ if(MINIMAL_BUILD)
   target_link_libraries(
     falco
     falco_engine
+    libhawk
     sinsp
     "${LIBYAML_LIB}"
     "${YAMLCPP_LIB}")
@@ -115,6 +117,7 @@ else()
     falco
     PUBLIC
       "${SYSDIG_SOURCE_DIR}/userspace/sysdig"
+      "${PROJECT_BINARY_DIR}/userspace/libhawk"
       "${PROJECT_SOURCE_DIR}/userspace/engine"
       "${PROJECT_BINARY_DIR}/userspace/falco"
       "${PROJECT_BINARY_DIR}/driver/src"
@@ -131,6 +134,7 @@ else()
   target_link_libraries(
     falco
     falco_engine
+    libhawk
     sinsp
     "${GPR_LIB}"
     "${GRPC_LIB}"
